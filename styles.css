@@ -26,25 +26,36 @@ h4,h5{
     font-size: 2.8rem;
 }
 a{
-    color: white;
+    color: antiquewhite;
     text-decoration: none;
 }
 button{
     padding: 2rem 6rem;
-    background: #4c6e97;
+    background: #27394e;
     border: none;
     border-radius: 5px;
     font-size: 2rem;
-    color: white;
+    color: antiquewhite;
     cursor: pointer;
     letter-spacing: .15rem;
     font-weight: bold;
+    transition: background .5s ease-in-out;
+}
+button:hover{
+    background: #4c6e97;
 }
 
 /*Nav Section w/ Hero */
 .main-head{
     background: #131c27;
-    color: white;   
+    color: antiquewhite;   
+}
+.main-head a{
+    transition: all .2s ease-in;
+}
+.main-head a:hover{
+    font-size: 2.2rem;
+    color: rgb(4, 170, 4);
 }
 nav{
     min-height: 10vh;
@@ -67,6 +78,7 @@ nav ul{
     font-family: "Pattaya",sans-serif;
     letter-spacing: .2rem;
     font-weight: 400;
+    color: rgb(4, 170, 4);
 }
 .hero{
     min-height: 90vh;
@@ -74,7 +86,7 @@ nav ul{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color: white;
+    color: antiquewhite;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,6 +106,7 @@ nav ul{
     display: flex;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 .locations-head{
     width: 90%;
@@ -110,14 +123,25 @@ nav ul{
     position: absolute;
     top: 0%;
     right: 0%;
+    pointer-events: none;
 }
 .moving-cloud-1{
-
+    animation: cloudAnimation 6s infinite alternate ease-in-out;
 }
 .moving-cloud-2{
-    top: 20%;
+    top: 15%;
     z-index: -1;
     opacity: 0.5;
+    animation: cloudAnimation 8s infinite alternate ease-in-out;
+}
+
+@keyframes cloudAnimation{
+    from{
+        transform: translate(10%, -10%);
+    }
+    to{
+        transform: translate(0%, 0%);
+    }
 }
 
 /*Media Queries*/
@@ -130,5 +154,25 @@ nav ul{
     }
     #logo{
         padding: 1.2rem;
+    }
+    .cloud{
+        height: 40rem;
+    }
+    .moving-cloud-1{
+        z-index: -1;
+    }
+    .moving-cloud-2{
+        z-index: -2;
+        top: 5%;
+    }
+    .locations-head h2{
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+    .locations-head h3{
+        background: rgba(19, 28, 39, .85);
+        border-radius: 10px;
+        color: antiquewhite;
+        text-align: center;
     }
 }
