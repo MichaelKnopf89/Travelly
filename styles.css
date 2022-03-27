@@ -48,7 +48,10 @@ button:hover{
 /*Nav Section w/ Hero */
 .main-head{
     background: #131c27;
-    color: antiquewhite;   
+    color: antiquewhite;
+    position: sticky;
+    top: 0px;
+    z-index: 100;   
 }
 .main-head a{
     transition: all .2s ease-in;
