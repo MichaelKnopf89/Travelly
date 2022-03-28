@@ -96,6 +96,30 @@ nav ul{
     align-items: center;
     text-align: center;
 }
+.burger{
+    display: none;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: antiquewhite;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+.hero-text{
+    width: 90%;
+    margin: auto;
+}
 .hero h3{
     padding: 5rem;
 }
@@ -287,10 +311,36 @@ footer h5{
     html{
         font-size: 45%;
     }
+    body{
+        overflow-x: hidden;
+    }
     nav{
         text-align: center;
+        flex-wrap: nowrap;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 10vh;
+        background-color: rgba(19, 28, 39, .95);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 75%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        font-size: 2.5rem;
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+        cursor: pointer;
     }
     #logo{
+        font-size: 4rem;
         padding: 1.2rem;
     }
     .cloud{
@@ -322,4 +372,17 @@ footer h5{
     footer h5{
         padding-bottom: 2rem;
     }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
 }
